@@ -43,4 +43,6 @@ end
 
 gem 'pusher'
 gem 'figaro'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 

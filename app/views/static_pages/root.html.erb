@@ -1,18 +1,50 @@
+<script>
+  function gravatarImg(user) {
+    return $('<img src="http://gravatar.com/avatar/' + md5(user.email) + '?s=20">');
+  }
+  function addUserToList (user, listSel) {
+    var $userEl = $('<li class="list-group-item">');
+    $userEl.data('id', user.id);
+    $userEl.html(user.nickname);
+    $userEl.prepend(gravatarImg(user));
+    $(listSel).append($userEl);
+  }
+  function removeUserFromList (user, listSel) {
+    $(listSel + ' > div').each(function (x, memEl) {
+      if($(memEl).data('id') == member.id) {
+        $(memEl).remove();
+      }
+    });
+  }
+</script>
+
 <h3> OPTION 1: Recently logged in users </h3>
-<%= @recently_logged_in_users.to_json %>
+<ul class="list-group">
+  <%= @recently_logged_in_users.each do |user| %>
+    <li class="list-group-item">
+      <img src="<%= user.gravatar %>" />
+      <%= user.nickname %>
+    <li>
+  <% end %>
+</ul>
 
 <!-- OPTION 2 -->
 <h3> OPTION 2: Rails cached users ajax/unload </h3>
-<%= @rails_cached_users.to_json %> + 
-<div id="current_cached_user"></div>
+<ul id="current-cached-user" class="list-group">
+  <%= @rails_cached_users.each do |user| %>
+    <li class="list-group-item">
+      <img src="<%= user.gravatar %>" />
+      <%= user.nickname %>
+    <li>
+  <% end %>
+</ul>
+
 <script>
   $(function () {
-    $.ajax({
-      url: '/online_user',
-      type: 'POST',
-      success: function (users) {
-        $('#current_cached_user').html(JSON.stringify(users));
-      }
+    $.post('/online_user').then(function (users) {
+      users.forEach(function (user) {
+        addUserToList(user, '#current-cached-user');
+      });
     });
   });
   function cleanup() {
@@ -31,8 +63,8 @@
 
 <!-- OPTION 3 -->
 <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
-<h3> Pusher Presence Channel </h3>
-<div id="pusher-members"></div>
+<h3> OPTION 3: Pusher Presence Channel </h3>
+<ul id="pusher-members" class="list-group"></ul>
 <script type="text/javascript">
   var pusher = new Pusher('97bcb854b4c8991492fd');
   var presenceChannel = pusher.subscribe('presence-all');
@@ -50,11 +82,15 @@
     });
   }
   presenceChannel.bind('pusher:subscription_succeeded', function(members) {
-    members.each(addMember);
+    members.each(function (member) {
+      addUserToList(member.info, '#pusher-members');
+    });
   });
-  presenceChannel.bind('pusher:member_added', addMember);
+  presenceChannel.bind('pusher:member_added', function (member) {
+    addUserToList(member.info, '#pusher-members');
+  });
   presenceChannel.bind('pusher:member_removed', function(member) {
-    removeMember(member);
+    removeUserFromList(member.info);
   });
 </script>
 <!-- /OPTION 3 -->
