@@ -21,3 +21,10 @@ each request. Rely on the database to give you the correct users based
 on a where clause.
 + A little better: keep an LRU cache of users who visit the site.
 + Best?: Hash that's updated when someone joins/leaves
+
+### OPTION 1:
+
++ Every time a controller aciton fires, touch the current user, then
+compile a list of online users based on `User#updated_at`.
+
+

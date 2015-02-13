@@ -1,0 +1,10 @@
+<h1> Welcome </h1>
+
+<%= flash[:errors] && flash[:errors].to_json %>
+<form action="/session" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" name="user[nickname]" placeholder="Nickname" />
+  <input type="email" name="user[email]" placeholder="Email" />
+
+  <input type="submit" value="Enter">
+</form>
