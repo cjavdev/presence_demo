@@ -41,3 +41,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'pusher'
+gem 'figaro'
+

@@ -1,1 +1,64 @@
+<h3> OPTION 1: Recently logged in users </h3>
 <%= @recently_logged_in_users.to_json %>
+
+<!-- OPTION 2 -->
+<h3> OPTION 2: Rails cached users ajax/unload </h3>
+<%= @rails_cached_users.to_json %> + 
+<div id="current_cached_user"></div>
+<script>
+  $(function () {
+    $.ajax({
+      url: '/online_user',
+      type: 'POST',
+      success: function (users) {
+        $('#current_cached_user').html(JSON.stringify(users));
+      }
+    });
+  });
+  function cleanup() {
+    $.ajax({
+       url: '/online_user',
+       type: 'DELETE',
+       async: false
+    });
+  }
+  $(window).on('beforeunload', function() {
+    var x = cleanup();
+    return x;
+  });
+</script>
+<!-- /OPTION 2 -->
+
+<!-- OPTION 3 -->
+<script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
+<h3> Pusher Presence Channel </h3>
+<div id="pusher-members"></div>
+<script type="text/javascript">
+  var pusher = new Pusher('97bcb854b4c8991492fd');
+  var presenceChannel = pusher.subscribe('presence-all');
+  function addMember(member) {
+    var $memberDiv = $('<div>');
+    $memberDiv.data('id', member.id);
+    $memberDiv.html(member.info.nickname);
+    $('#pusher-members').append($memberDiv);
+  }
+  function removeMember(member) {
+    $('#pusher-members > div').each(function (x, memEl) {
+      if($(memEl).data('id') == member.id) {
+        $(memEl).remove();
+      }
+    });
+  }
+  presenceChannel.bind('pusher:subscription_succeeded', function(members) {
+    members.each(addMember);
+  });
+  presenceChannel.bind('pusher:member_added', addMember);
+  presenceChannel.bind('pusher:member_removed', function(member) {
+    removeMember(member);
+  });
+</script>
+<!-- /OPTION 3 -->
+
+<!-- OPTION 4 -->
+
+<!-- /OPTION 4 -->

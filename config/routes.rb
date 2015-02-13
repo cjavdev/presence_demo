@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   root to: "static_pages#root"
   resource :session
+  resource :online_user
+  post "/pusher/auth" => "pusher#auth"
 end
