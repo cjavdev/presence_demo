@@ -1,3 +1,4 @@
+# OPTION 2
 class OnlineUsersController < ApplicationController
   before_action :require_user
   before_action :get_users

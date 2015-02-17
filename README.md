@@ -55,7 +55,8 @@ viewing the site.
 attempt to track when they close the browser and remove them from the
 cache.
 
-Tricky business: unload requires some special attention. http://stackoverflow.com/questions/4945932/window-onbeforeunload-ajax-request-problem-with-chrome
+Tricky business: unload requires some special attention.
+http://stackoverflow.com/questions/4945932/window-onbeforeunload-ajax-request-problem-with-chrome
 
 If this isn't a single page app and the page is making full refreshes
 often then, an extra consideration needs to be made.
@@ -72,3 +73,10 @@ http://stackoverflow.com/questions/568977/identifying-between-refresh-and-close-
 + Use pusher presence channel
 
 Slanger is an open source alternative: https://github.com/stevegraham/slanger
+
+### OPTION 4:
+
++ Use a Node.js service that runs socket.io
+
+This allows you to build out the logic for handling realtime things in a
+different service.
