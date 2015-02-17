@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Presence Demo</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Presence Demo</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<% if !!current_user %> 
-  <%= button_to "Sign Out", session_url, method: :delete, class:"btn btn-danger btn-xs" %>
-  <img src="<%= current_user.gravatar(40) %>">
-  Welcome <%= current_user.nickname %>
-<% end %>
-
-<%= yield %>
-
-</body>
+    <div class="container-fluid">
+      <div class="row">
+        <% if !!current_user %> 
+          <%= button_to "Sign Out", session_url, method: :delete, class:"btn btn-danger btn-xs" %>
+        <% end %>
+      </div>
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>
