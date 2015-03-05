@@ -7,25 +7,56 @@ pusher_secret:
 `bundle install`
 `bundle exec rake db:create db:migrate`
 
-# Presence / Who's online
+---
+http://goo.gl/D2JE32
+
+# Who's online
+## (aka) Presence
+
+
++ Who's it for?
++ Critical pieces
+
+---
+
+# Critical for
 
 + Chat
 + Collaborators on a document
++ Game lobbies
+
+---
 
 [Seems
 hard?](http://help.soundcloud.com/customer/portal/articles/1485216-where-did-who-s-online-go-)
 
-What's needed:
+---
+
+# What's needed
 
 + Collection of users
 + Knowledge of when someone joins/leaves
 + Ability to update everyone (in real time?)
 
-# Collection of users
+---
 
-+ `User < ActiveRecord::Base`
+# Existing Solutions
++ Last Seen (Date)
++ Cache
++ Pusher presence channel
++ Node.js socket.io service
++ Pubnub?
++ Firebase?
 
-# Knowledge of when someone joins/leaves
+---
+
+## Collection of users
+
+`User < ActiveRecord::Base`
+
+---
+
+## Knowledge of when someone joins/leaves
 
 + Naiive approach would be to have the list of who's online be anyone
 with an updated at in the last X min. Send the list of online users with
@@ -35,7 +66,9 @@ on a where clause.
 they interact with the site.
 + Best?: Hash that's updated when someone joins/leaves.
 
-### OPTION 1:
+---
+
+### OPTION 1 - Last seen:
 
 + Every time a controller action fires, touch the current user, then
 compile a list of online users based on `User#updated_at`.
@@ -49,7 +82,9 @@ Also, how do you choose what the duration of delay should be? This is
 completely unrelated to the browser window being open and the user
 viewing the site.
 
-### OPTION 2:
+---
+
+### OPTION 2 (Cache of users):
 
 + Every time a user is logged in, add them to a cache of users, then
 attempt to track when they close the browser and remove them from the
@@ -68,15 +103,21 @@ canceled.
 
 http://stackoverflow.com/questions/568977/identifying-between-refresh-and-close-browser-actions/13916847#13916847
 
-### OPTION 3:
+---
+
+### OPTION 3 - Pusher:
 
 + Use pusher presence channel
 
-Slanger is an open source alternative: https://github.com/stevegraham/slanger
+Slanger is an open source alternative:
+https://github.com/stevegraham/slanger
 
-### OPTION 4:
+---
+
+### OPTION 4 - socket.io:
 
 + Use a Node.js service that runs socket.io
 
 This allows you to build out the logic for handling realtime things in a
 different service.
+
