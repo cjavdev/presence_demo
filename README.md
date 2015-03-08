@@ -42,7 +42,8 @@ hard?](http://help.soundcloud.com/customer/portal/articles/1485216-where-did-who
 
 # Existing Solutions
 + Last Seen (Date)
-+ Cache
++ Cache (explore in more detail)
+http://www.ryanepp.com/blog/how-do-i-tell-if-a-user-is-online
 + Pusher presence channel
 + Node.js socket.io service
 + Pubnub?
