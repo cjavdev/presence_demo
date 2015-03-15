@@ -8,64 +8,28 @@ pusher_secret:
 `bundle exec rake db:create db:migrate`
 
 ---
+
 http://goo.gl/D2JE32
 
 # Who's online
-## (aka) Presence
 
+**CJ Avilla**
 
-+ Who's it for?
-+ Critical pieces
+@w1zeman1p
 
 ---
 
-# Critical for
+## Presence is great for
 
-+ Chat
 + Collaborators on a document
 + Game lobbies
++ Chat
 
 ---
 
+According to soundcloud it
 [Seems
 hard?](http://help.soundcloud.com/customer/portal/articles/1485216-where-did-who-s-online-go-)
-
----
-
-# What's needed
-
-+ Collection of users
-+ Knowledge of when someone joins/leaves
-+ Ability to update everyone (in real time?)
-
----
-
-# Existing Solutions
-+ Last Seen (Date)
-+ Cache (explore in more detail)
-http://www.ryanepp.com/blog/how-do-i-tell-if-a-user-is-online
-+ Pusher presence channel
-+ Node.js socket.io service
-+ Pubnub?
-+ Firebase?
-
----
-
-## Collection of users
-
-`User < ActiveRecord::Base`
-
----
-
-## Knowledge of when someone joins/leaves
-
-+ Naiive approach would be to have the list of who's online be anyone
-with an updated at in the last X min. Send the list of online users with
-each request. Rely on the database to give you the correct users based
-on a where clause.
-+ A little better: Keep a cache of users and manually add, remove as
-they interact with the site.
-+ Best?: Hash that's updated when someone joins/leaves.
 
 ---
 
@@ -122,3 +86,13 @@ https://github.com/stevegraham/slanger
 This allows you to build out the logic for handling realtime things in a
 different service.
 
+---
+
+# Existing Solutions
++ Last Seen (Date)
++ Cache (explore in more detail)
+http://www.ryanepp.com/blog/how-do-i-tell-if-a-user-is-online
++ Pusher presence channel
++ Node.js socket.io service
++ Pubnub?
++ Firebase?

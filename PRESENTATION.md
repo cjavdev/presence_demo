@@ -30,6 +30,6 @@ Lets first get a quick lay of the land.
 Number 1! Using some sort of last seen date.
 
 Code!
-https://gist.github.com/w1zeman1p/17ae623444e9e85609e2
 
+[option 1](https://gist.github.com/w1zeman1p/17ae623444e9e85609e2)
 
