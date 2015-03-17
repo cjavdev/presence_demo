@@ -29,7 +29,23 @@ Lets first get a quick lay of the land.
 
 Number 1! Using some sort of last seen date.
 
+As we know trafic to our sites happens to come in waves. Lets say we posted something on HN and we're getting a wave of traffic. this side of the room is the early adopters :).
+
+now everyone who recently raised their hand is considered online. now if you want to seem like you're online you could continually raise your hand, continually hit the page. but that's annoying.
+
 Code!
 
 [option 1](https://gist.github.com/w1zeman1p/17ae623444e9e85609e2)
 
+Option B... Keep an in memory cache of the relevent user data.
+
+Code!
+
+[option 2]()
+
+3rd Option: Use websockets
+
+Option 3 is really broken down into a few sub options:
+  suboption 1: Third party (Pusher/Slanger)
+  suboption 2: Roll your own websockets stuff (socket.io)
+  suboption 3: Use rails websockets
