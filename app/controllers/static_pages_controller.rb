@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
     @recently_logged_in_users = User.where('updated_at > ?', 30.seconds.ago)
 
     # OPTION 2
-    @rails_cached_users ||= Rails.cache.read('users')
+    @rails_cached_users ||= Rails.cache.read('users') || []
   end
 
   # OPTION 1
