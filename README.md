@@ -28,8 +28,7 @@ http://goo.gl/D2JE32
 
 last login + delay
 
-<img
-src="http://www.curata.com/blog/wp-content/uploads/2015/01/web-traffic-meme.jpg">
+<img src="http://www.curata.com/blog/wp-content/uploads/2015/01/web-traffic-meme.jpg">
 ---
 
 ### OPTION 1 - Last seen:
@@ -50,8 +49,7 @@ How do we choose an appropriate delay?
 ---
 
 ### OPTION 2 (Cache of users)
-<img
-src="http://www.quickmeme.com/img/6f/6f959f1ae43f3f29bd3b0ff2cbe686c96f96c631c6e90f844c264e2b25691b25.jpg">
+<img src="http://www.quickmeme.com/img/6f/6f959f1ae43f3f29bd3b0ff2cbe686c96f96c631c6e90f844c264e2b25691b25.jpg">
 ---
 
 ### OPTION 2 (Cache of users):
