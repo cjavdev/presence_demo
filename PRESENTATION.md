@@ -14,9 +14,11 @@ I: <state your email>
 PAUSE
 Password: <state your password>
 
-click submit, and take a seat.
+click submit.
 
 Welcome back username!
+
+take seats.
 
 You may imagine that this application is a collaborative document
 editor, maybe a game, but most likely its a Chat room. Given that many
@@ -47,13 +49,13 @@ what those are.
 ;layofland
 [layofland](https://gist.github.com/28cd0d4ea7d6bee377d7)
 
-Option B... Keep an in memory cache of the relevent user data.
+Option B... Keep an in memory cache of the relevant user data.
 
 The idea here is that as users visit the page they will send an ajax
 request in the background to register them as being online. then we'll
 need some clever way of knowing when they've left.
 
-In this example i'm going to attempt to cache who's logged in in my
+In this example I'm going to attempt to cache who's logged in in my
 memory. I've got a blind fold. I'm going to attempt to keep track of
 who's online based on you saying favorite gem LOCKED AND LOADED favorite gem OVER AND OUT.
 so for example: capybara LOCKED AND LOADED, faker LOCKED AND LOADED.
@@ -65,17 +67,9 @@ Code!
 3rd Option: Use websockets
 
 Option 3 is really broken down into a few sub options:
+;pusher
   suboption 1: Third party (Pusher/Slanger)
-  suboption 2: Roll your own websockets stuff (socket.io)
+;socketio
+  suboption 2: Roll your own websockets stuff (socket.io) *microservice*
   suboption 3: Use rails websockets
 
-  feedback
-
-no working link to soundcloud
-gist for pusher
-repo for node stuff
-likes the socks thing
-who's online delay
-only one problem with number2
-*microservice*
-funkyness with return value of window on close
