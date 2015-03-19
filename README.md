@@ -1,3 +1,5 @@
+Quick start:
+
 ```yml
 # config/application.yml
 pusher_key: 
@@ -6,6 +8,8 @@ pusher_secret:
 
 `bundle install`
 `bundle exec rake db:create db:migrate`
+
+Related Socket.io Service: https://github.com/w1zeman1p/presence_demo_node_microservice
 
 ---
 
@@ -16,20 +20,6 @@ http://goo.gl/D2JE32
 **CJ Avilla**
 
 @w1zeman1p
-
----
-
-## Presence is great for
-
-+ Collaborators on a document
-+ Game lobbies
-+ Chat
-
----
-
-According to soundcloud it
-[Seems
-hard?](http://help.soundcloud.com/customer/portal/articles/1485216-where-did-who-s-online-go-)
 
 ---
 
@@ -72,6 +62,8 @@ http://stackoverflow.com/questions/568977/identifying-between-refresh-and-close-
 
 ### OPTION 3 - Pusher:
 
+https://pusher.com/
+
 + Use pusher presence channel
 
 Slanger is an open source alternative:
@@ -80,6 +72,8 @@ https://github.com/stevegraham/slanger
 ---
 
 ### OPTION 4 - socket.io:
+
+http://goo.gl/fB2t5g
 
 + Use a Node.js service that runs socket.io
 

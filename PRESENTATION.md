@@ -10,7 +10,7 @@ all stand up, please.
 
 Repeat after me:
 
-I: <state your username>
+I: <state your email>
 PAUSE
 Password: <state your password>
 
@@ -28,7 +28,7 @@ Lets quickly explore 4 alternatives to showing who's online.
 Number 1! Using some sort of last seen date.
 
 As we know trafic to our sites happens to come in waves. Lets say we
-posted something on HN and we're getting a wave of traffic. this side of
+posted something on HN and we're getting a wave of traffic. This side of
 the room is the early adopters :).
 
 now everyone who recently raised their hand is considered online. now if
