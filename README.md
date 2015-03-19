@@ -28,6 +28,8 @@ http://goo.gl/D2JE32
 
 last login + delay
 
+<img
+src="http://www.curata.com/blog/wp-content/uploads/2015/01/web-traffic-meme.jpg">
 ---
 
 ### OPTION 1 - Last seen:
@@ -47,8 +49,9 @@ How do we choose an appropriate delay?
 
 ---
 
-### OPTION 2 (Cache of users):
-
+### OPTION 2 (Cache of users)
+<img
+src="http://www.quickmeme.com/img/6f/6f959f1ae43f3f29bd3b0ff2cbe686c96f96c631c6e90f844c264e2b25691b25.jpg">
 ---
 
 ### OPTION 2 (Cache of users):
@@ -72,11 +75,17 @@ http://goo.gl/D0zeeq
 
 ---
 
+### OPTION 3/4 Websockets!
+
+---
+
 ### OPTION 3 - Pusher:
 
 https://pusher.com/
 
 + Use pusher presence channel
++ $$$$
+
 
 Slanger is an open source alternative:
 https://github.com/stevegraham/slanger
@@ -87,10 +96,9 @@ https://github.com/stevegraham/slanger
 
 http://goo.gl/fB2t5g
 
-+ Use a Node.js service that runs socket.io
++ Use a Node.js/IO.js service that runs socket.io
 
-This allows you to build out the logic for handling realtime things in a
-different service.
+Very flexible :)
 
 ---
 
