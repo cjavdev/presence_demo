@@ -1,3 +1,20 @@
+welcome
+https privacy policy
+repeat after me, submit
+email/password
+doc editor/game lobby/chat room
+we have a feature which shows who's online
+16 min explore 4 options
+traffic comes in waves give link to someone over here
+last seen code
+last seen problem: index, delay
+cache game
+lay of the land
+cache
+sock time!
+
+---
+
 Super stoked to see all of you and excited to welcome you to this
 interactive demo of **presence**. This room is a simulated web
 application. You are all users of the site, this foreword is a
@@ -33,7 +50,7 @@ As we know trafic to our sites happens to come in waves. Lets say we
 posted something on HN and we're getting a wave of traffic. This side of
 the room is the early adopters :).
 
-now everyone who recently raised their hand is considered online. now if
+Now everyone who recently raised their hand is considered online. If
 you want to seem like you're online you could continually raise your
 hand, continually hit the page. but that's annoying.
 
