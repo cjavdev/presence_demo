@@ -75,6 +75,8 @@ http://goo.gl/D0zeeq
 
 ### OPTION 3/4 Websockets!
 
+<img src="http://cdn.meme.am/instances/500x/54276715.jpg">
+
 ---
 
 ### OPTION 3 - Pusher:
