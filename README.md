@@ -33,7 +33,7 @@ last login + delay
 
 ### OPTION 1 - Last seen:
 
-code!
+[code!](https://gist.github.com/w1zeman1p/17ae623444e9e85609e2)
 
 + Always touch the current user and
 compile a list of online users based on `User#updated_at`.
@@ -53,6 +53,8 @@ How do we choose an appropriate delay?
 ---
 
 ### OPTION 2 (Cache of users):
+
+[code!](https://gist.github.com/w1zeman1p/998aa864ba99d4ef866e)
 
 Keep a cache of users and _attempt_ to track when they close the browser and
 remove them.
@@ -81,6 +83,8 @@ http://goo.gl/D0zeeq
 
 ### OPTION 3 - Pusher:
 
+[code!](https://gist.github.com/w1zeman1p/980db3be732dabe180eb)
+
 https://pusher.com/
 
 + Use pusher presence channel
@@ -93,6 +97,8 @@ https://github.com/stevegraham/slanger
 ---
 
 ### OPTION 4 - socket.io:
+
+[code!](https://gist.github.com/w1zeman1p/a0203e494283aaf4bda9)
 
 http://goo.gl/fB2t5g
 
